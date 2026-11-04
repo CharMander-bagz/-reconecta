@@ -1,0 +1,845 @@
+
+/* ===== ESTRUTURA DO PAINEL ===== */
+
+.admin {
+  display: flex;
+  min-height: 100vh;
+  background: #0b0d11;
+  color: #f7f7fa;
+}
+
+/* ===== MENU LATERAL ===== */
+
+.admin-menu {
+  width: 260px;
+  padding: 30px 20px;
+  background: #14121e;
+  border-right: 1px solid #a64be840;
+
+  
+/* ===== MENU LATERAL FIXO ===== */
+
+/* Mantém o menu visível durante a rolagem da página */
+position: sticky;
+top: 0;
+height: 100vh;
+overflow-y: auto;
+align-self: flex-start;
+
+}
+
+.admin-menu h2 {
+  color: #55c878;
+  margin: 0 0 10px;
+}
+
+.admin-menu p {
+  color: #b9b9c4;
+  font-size: 13px;
+}
+
+/* ===== BOTÕES DE NAVEGAÇÃO ===== */
+
+.admin-navegacao {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 35px;
+  gap: 12px;
+}
+
+.admin-navegacao button {
+  background: transparent;
+  color: white;
+  border: 1px solid #a64be835;
+  padding: 14px;
+  border-radius: 9px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.admin-navegacao button:hover {
+  background: #572181;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+
+.admin-conteudo {
+  flex: 1;
+  min-width: 0;
+  padding: 40px;
+}
+
+.admin-conteudo h1 {
+  margin-top: 0;
+}
+
+.admin-conteudo > p {
+  color: #b9b9c4;
+}
+
+/* ===== INDICADORES ===== */
+
+.admin-indicadores {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 35px 0;
+}
+
+.admin-card {
+  background: #1c1a29;
+  border: 1px solid #a64be840;
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.admin-card h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #b9b9c4;
+}
+
+.admin-card strong {
+  display: block;
+  font-size: 35px;
+  color: #55c878;
+}
+
+/* ===== GERENCIAMENTO ===== */
+
+.admin-secao {
+  background: #17151f;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #a64be840;
+}
+
+.admin-secao p {
+  color: #b9b9c4;
+}
+
+.admin-botao {
+  margin-top: 15px;
+  background: #7031a1;
+  border: none;
+  border-radius: 9px;
+  padding: 13px 22px;
+  color: white;
+}
+
+.admin-botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-aviso {
+  font-size: 12px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 800px) {
+  .admin {
+    flex-direction: column;
+  }
+
+  .admin-menu {
+    width: 100%;
+  }
+
+  .admin-conteudo {
+    padding: 25px 15px;
+  }
+
+  .admin-indicadores {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== CABEÇALHO DO PAINEL ===== */
+
+.admin-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.admin-topo h1 {
+  margin: 0 0 12px;
+}
+
+.admin-topo p {
+  color: #b9b9c4;
+  margin: 0;
+}
+
+/* ===== BOTÃO DE ATUALIZAÇÃO ===== */
+
+.admin-atualizar {
+  background: #251b35;
+  border: 1px solid #a64be8;
+  border-radius: 9px;
+  padding: 12px 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.admin-atualizar:hover:not(:disabled) {
+  background: #572181;
+  box-shadow: 0 0 15px #a64be840;
+}
+
+.admin-atualizar:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ===== CABEÇALHO DA SEÇÃO ===== */
+
+.admin-secao-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.admin-secao-topo h2 {
+  margin: 0 0 10px;
+}
+
+.admin-secao-topo p {
+  margin: 0;
+}
+
+.admin-secao-topo .admin-botao {
+  margin-top: 0;
+}
+
+/* ===== TABELA DE EQUIPAMENTOS ===== */
+
+.admin-tabela-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #a64be835;
+}
+
+.admin-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  text-align: left;
+}
+
+.admin-tabela thead {
+  background: #281b38;
+}
+
+.admin-tabela th {
+  padding: 17px 15px;
+  color: #c99af0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-tabela td {
+  padding: 16px 15px;
+  border-top: 1px solid #ffffff12;
+  color: #e0dfe8;
+  font-size: 13px;
+}
+
+.admin-tabela tbody tr:hover {
+  background: #a64be80c;
+}
+
+/* ===== ETIQUETA DE ESTADO ===== */
+
+.admin-etiqueta {
+  display: inline-block;
+  background: #173d2a;
+  color: #7be79c;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+/* ===== MENSAGENS DO PAINEL ===== */
+
+.admin-erro {
+  margin-top: 25px;
+  padding: 15px;
+  background: #4a1725;
+  color: #ffb6c4;
+  border-radius: 9px;
+}
+
+.admin-vazio {
+  text-align: center;
+  padding: 25px;
+  color: #b9b9c4;
+}
+
+/* ===== AJUSTES PARA CELULARES ===== */
+
+@media (max-width: 800px) {
+  .admin-topo {
+    align-items: flex-start;
+  }
+
+  .admin-indicadores {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-secao {
+    padding: 20px;
+  }
+}
+
+
+/* ===== FORMULÁRIO DE EQUIPAMENTOS ===== */
+
+.admin-formulario {
+  margin-bottom: 30px;
+  padding: 28px;
+  background: #111018;
+  border: 1px solid #7130a1;
+  border-radius: 14px;
+}
+
+.admin-formulario h3 {
+  margin: 0 0 25px;
+  color: #f7f7fa;
+  font-size: 20px;
+}
+
+/* ===== ORGANIZAÇÃO DOS CAMPOS ===== */
+
+.admin-campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.admin-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.admin-campo-largo {
+  grid-column: 1 / -1;
+}
+
+.admin-campo label {
+  color: #ded7e8;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ===== ESTILO DOS CAMPOS ===== */
+
+.admin-campo input,
+.admin-campo select,
+.admin-campo textarea {
+  width: 100%;
+  padding: 13px 15px;
+  background: #211c2d;
+  color: white;
+  border: 1px solid #58366f;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.admin-campo input:focus,
+.admin-campo select:focus,
+.admin-campo textarea:focus {
+  border-color: #a64be8;
+  box-shadow: 0 0 12px #a64be830;
+}
+
+.admin-campo input::placeholder,
+.admin-campo textarea::placeholder {
+  color: #95889f;
+}
+
+.admin-campo textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ===== BOTÕES DO FORMULÁRIO ===== */
+
+.admin-formulario-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.admin-cancelar,
+.admin-salvar {
+  padding: 13px 22px;
+  border-radius: 9px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-cancelar {
+  background: #30253b;
+  border: 1px solid #604775;
+  color: white;
+}
+
+.admin-cancelar:hover {
+  background: #483257;
+}
+
+.admin-salvar {
+  background: linear-gradient(135deg, #8d2cbd, #571b88);
+  border: 1px solid #a64be8;
+  color: white;
+  font-weight: bold;
+}
+
+.admin-salvar:hover:not(:disabled) {
+  box-shadow: 0 0 20px #a64be850;
+}
+
+.admin-cancelar:disabled,
+.admin-salvar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== MENSAGEM DE SUCESSO ===== */
+
+.admin-sucesso {
+  margin-top: 25px;
+  padding: 15px 18px;
+  background: #173d2a;
+  color: #7be79c;
+  border: 1px solid #55c87870;
+  border-radius: 9px;
+}
+
+/* ===== RESPONSIVIDADE DO FORMULÁRIO ===== */
+
+@media (max-width: 600px) {
+  .admin-formulario {
+    padding: 20px 15px;
+  }
+
+  .admin-campos {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-campo-largo {
+    grid-column: auto;
+  }
+
+  .admin-formulario-botoes {
+    justify-content: stretch;
+  }
+
+  .admin-cancelar,
+  .admin-salvar {
+    flex: 1;
+  }
+}
+
+
+/* ===== FUNDO ESCURECIDO DO POP-UP ===== */
+
+.admin-modal-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #000000c9;
+  backdrop-filter: blur(6px);
+}
+
+/* ===== JANELA DO POP-UP ===== */
+
+.admin-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 0;
+  background: #15121e;
+  border: 1px solid #a64be8;
+  border-radius: 16px;
+  box-shadow:
+    0 0 35px #a64be83d,
+    0 20px 70px #00000090;
+}
+
+/* ===== CABEÇALHO DO POP-UP ===== */
+
+.admin-modal-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.admin-modal-topo h3 {
+  margin: 0;
+  color: white;
+}
+
+/* ===== BOTÃO DE FECHAR ===== */
+
+.admin-modal-fechar {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #71438e;
+  border-radius: 9px;
+  background: #30213d;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.admin-modal-fechar:hover {
+  background: #7130a1;
+}
+
+/* ===== AJUSTES PARA CELULARES ===== */
+
+@media (max-width: 600px) {
+  .admin-modal-fundo {
+    padding: 10px;
+  }
+
+  .admin-modal {
+    max-height: 95vh;
+  }
+}
+
+
+/* ===== BOTÃO DE AVALIAÇÃO ===== */
+
+.admin-avaliar {
+  padding: 9px 17px;
+  border: 1px solid #a64be8;
+  border-radius: 8px;
+  background: #321a46;
+  color: #f7f7fa;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.admin-avaliar:hover {
+  background: #7130a1;
+  box-shadow: 0 0 15px #a64be850;
+}
+
+/* ===== INFORMAÇÕES DO EQUIPAMENTO ===== */
+
+.admin-avaliacao-info {
+  padding: 20px;
+  margin-bottom: 25px;
+  background: #211c2d;
+  border: 1px solid #58366f;
+  border-radius: 10px;
+}
+
+.admin-avaliacao-info h4 {
+  margin: 0 0 15px;
+  color: #55c878;
+  font-size: 18px;
+}
+
+.admin-avaliacao-info p {
+  margin: 8px 0;
+  color: #b9b9c4;
+  font-size: 14px;
+}
+
+.admin-avaliacao-info strong {
+  color: #f7f7fa;
+}
+
+/* ===== ESTADO DOS BOTÕES DESABILITADOS ===== */
+
+.admin-salvar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* ===== CORES DOS ESTADOS DOS EQUIPAMENTOS ===== */
+
+/* Pendente de avaliação: amarelo */
+.admin-etiqueta.estado-pendente {
+  color: #facc15;
+  background: #facc151a;
+  border: 1px solid #facc1555;
+}
+
+/* Funcional: verde */
+.admin-etiqueta.estado-funcional {
+  color: #55c878;
+  background: #55c8781a;
+  border: 1px solid #55c87855;
+}
+
+/* Reparável: azul */
+.admin-etiqueta.estado-reparavel {
+  color: #60a5fa;
+  background: #60a5fa1a;
+  border: 1px solid #60a5fa55;
+}
+
+/* Irrecuperável: vermelho */
+.admin-etiqueta.estado-irrecuperavel {
+  color: #fb7185;
+  background: #fb71851a;
+  border: 1px solid #fb718555;
+}
+
+
+
+/* ===== BOTÃO DE DISPONIBILIZAÇÃO ===== */
+
+.admin-disponibilizar {
+  margin: 5px;
+  padding: 9px 15px;
+  border: 1px solid #55c878;
+  border-radius: 8px;
+  background: #183e2a;
+  color: #8df5ae;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.admin-disponibilizar:hover {
+  background: #256b43;
+  box-shadow: 0 0 15px #55c87855;
+}
+
+/* ===== TEXTO DE CONFIRMAÇÃO ===== */
+
+.admin-doacao-aviso {
+  margin: 20px 0;
+  color: #f7f7fa;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* ===== PRÉVIA DO CADASTRO DE PONTOS ===== */
+
+.admin-botao-previa {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: default;
+  opacity: 0.75;
+}
+
+.admin-botao-previa small {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+
+/* ===== ETIQUETAS DE SITUAÇÃO DOS EQUIPAMENTOS ===== */
+
+.admin-etiqueta.situacao-em_avaliacao {
+  background: #3a2a16;
+  color: #f3c56d;
+  border: 1px solid #a87932;
+}
+
+.admin-etiqueta.situacao-disponivel_doacao {
+  background: #153225;
+  color: #73e69c;
+  border: 1px solid #398b5b;
+}
+
+.admin-etiqueta.situacao-reservado {
+  background: #271b3b;
+  color: #d9a6ff;
+  border: 1px solid #8d4ec1;
+}
+
+.admin-etiqueta.situacao-destinado {
+  background: #1b2b3d;
+  color: #8bc5ff;
+  border: 1px solid #477eaf;
+}
+
+
+/* ===== STATUS DAS PUBLICAÇÕES DE DOAÇÃO ===== */
+
+.admin-etiqueta.doacao-status-disponivel {
+  background: #153225;
+  color: #73e69c;
+  border: 1px solid #398b5b;
+}
+
+.admin-etiqueta.doacao-status-reservada {
+  background: #271b3b;
+  color: #d9a6ff;
+  border: 1px solid #8d4ec1;
+}
+
+.admin-etiqueta.doacao-status-concluida {
+  background: #1b2b3d;
+  color: #8bc5ff;
+  border: 1px solid #477eaf;
+}
+
+.admin-etiqueta.doacao-status-cancelada {
+  background: #3a2020;
+  color: #ff9999;
+  border: 1px solid #a84c4c;
+}
+
+
+/* ===== INDICADORES DO DASHBOARD ===== */
+
+.admin-indicadores .admin-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-indicadores .admin-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #55c878;
+}
+
+.admin-indicadores .admin-card:hover {
+  transform: translateY(-4px);
+  border-color: #55c87870;
+  box-shadow: 0 12px 30px #55c87812;
+}
+
+.admin-indicadores .admin-card strong {
+  display: block;
+  margin-top: 12px;
+  color: #55c878;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+/* ===== CORES ALTERNADAS DOS INDICADORES ===== */
+
+.admin-indicadores .admin-card:nth-child(2)::before {
+  background: #a64be8;
+}
+
+.admin-indicadores .admin-card:nth-child(3)::before {
+  background: #55c878;
+}
+
+/* ===== DETALHES VISUAIS ===== */
+
+.admin-indicadores .admin-card h3 {
+  margin: 0;
+  color: #c9c5d4;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* ===== ÍCONES DOS INDICADORES ===== */
+
+.admin-card-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border: 1px solid #55c87855;
+  border-radius: 12px;
+  background: #55c87812;
+  color: #55c878;
+  font-size: 25px;
+}
+
+.admin-indicadores .admin-card:nth-child(2) .admin-card-icone {
+  border-color: #a64be855;
+  background: #a64be812;
+  color: #c77bff;
+}
+
+
+/* ===== ALINHAMENTO DOS INDICADORES ===== */
+
+.admin-card-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.admin-card-cabecalho .admin-card-icone {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.admin-card-cabecalho h3 {
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+/* ===== INDICADORES MAIS COMPACTOS ===== */
+
+.admin-indicadores .admin-card {
+  min-height: 0;
+  height: auto;
+  padding: 18px 22px;
+}
+
+.admin-card-cabecalho {
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.admin-card-cabecalho .admin-card-icone {
+  width: 38px;
+  height: 38px;
+  font-size: 21px;
+}
+
+.admin-indicadores .admin-card strong {
+  margin-top: 4px;
+  font-size: 30px;
+}

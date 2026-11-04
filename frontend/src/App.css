@@ -1,0 +1,1312 @@
+
+
+/* ===== PALETA DE CORES ===== */
+
+:root {
+  --preto: #0b0d11;
+  --preto-card: #15141e;
+  --verde: #55c878;
+  --roxo: #a64be8;
+  --roxo-escuro: #571b88;
+  --branco: #f7f7fa;
+  --cinza: #b9b9c4;
+}
+
+/* ===== ESTRUTURA PRINCIPAL ===== */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--preto);
+  color: var(--branco);
+}
+
+/* ===== CABEÇALHO ===== */
+
+.cabecalho {
+  min-height: 82px;
+  padding: 16px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #090a0eea;
+  border-bottom: 1px solid #55c87845;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.logo-icone {
+  color: var(--verde);
+  font-size: 37px;
+}
+
+.logo-roxo,
+.texto-roxo {
+  color: var(--roxo);
+}
+
+.texto-verde {
+  color: var(--verde);
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+nav button:hover {
+  color: var(--roxo);
+  background: #a64be817;
+}
+
+nav button.ativo {
+  background: linear-gradient(135deg, #35104d, #6a2494);
+  border-color: var(--roxo);
+  box-shadow: 0 0 15px #a64be840;
+  color: white;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+
+.conteudo {
+  flex: 1;
+}
+
+/* ===== PÁGINA INICIAL ===== */
+
+.inicio {
+  min-height: calc(100vh - 160px);
+  background:
+    radial-gradient(
+      ellipse at 78% 42%,
+      #166a4566,
+      transparent 43%
+    ),
+    radial-gradient(
+      ellipse at 52% 10%,
+      #63239144,
+      transparent 43%
+    ),
+    linear-gradient(135deg, #090c0e, #11121b 65%, #180d24);
+}
+
+/* ===== SEÇÃO DE APRESENTAÇÃO ===== */
+
+.hero {
+  min-height: 560px;
+  padding: 70px 8% 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  overflow: hidden;
+}
+
+.hero-conteudo {
+  flex: 1.2;
+  max-width: 750px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-etiqueta {
+  display: inline-block;
+  color: var(--verde);
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 4.3vw, 64px);
+  line-height: 1.13;
+  letter-spacing: -1.5px;
+  margin: 0 0 25px;
+}
+
+.hero p {
+  color: #d2d1dc;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 630px;
+  margin-bottom: 32px;
+}
+
+/* ===== BOTÃO PRINCIPAL ===== */
+
+.botao-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 17px 27px;
+  border-radius: 30px;
+  border: 1px solid #ca65ff;
+  background: linear-gradient(135deg, #8d2cbd, #4b126c);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 25px #9d31d550;
+  transition: 0.3s;
+}
+
+.botao-principal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px #a64be890;
+  background: linear-gradient(135deg, #a443d5, #65218e);
+}
+
+/* ===== ILUSTRAÇÃO TECNOLÓGICA ===== */
+
+.hero-visual {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 360px;
+}
+
+.circulo-luz {
+  width: min(30vw, 340px);
+  height: min(30vw, 340px);
+  min-width: 230px;
+  min-height: 230px;
+  border-radius: 50%;
+  border: 2px solid #55c87860;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background:
+    radial-gradient(circle, #4b1b7555, transparent 65%),
+    radial-gradient(circle at 80% 80%, #1a764855, transparent 60%);
+  box-shadow:
+    0 0 80px #55c87830,
+    inset 0 0 70px #a64be830;
+}
+
+.simbolo-reciclagem {
+  font-size: clamp(110px, 14vw, 190px);
+  color: var(--verde);
+  text-shadow: 0 0 40px #55c87880;
+}
+
+.simbolo-tecnologia {
+  position: absolute;
+  right: -10px;
+  bottom: 5px;
+  font-size: 85px;
+  color: var(--roxo);
+  text-shadow: 0 0 30px #a64be880;
+}
+
+/* ===== BENEFÍCIOS DO PROJETO ===== */
+
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #55c87865;
+  border-bottom: 1px solid #a64be850;
+  background: #080a0ed9;
+  padding: 30px 8%;
+}
+
+.beneficio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 20px;
+}
+
+.beneficio:not(:last-child) {
+  border-right: 1px solid #ffffff30;
+}
+
+.beneficio-icone {
+  font-size: 42px;
+}
+
+.beneficio-icone.verde {
+  color: var(--verde);
+}
+
+.beneficio-icone.roxo {
+  color: var(--roxo);
+}
+
+.beneficio h3 {
+  font-size: 16px;
+  margin: 0 0 5px;
+}
+
+.beneficio p {
+  color: var(--cinza);
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ===== PÁGINAS DE DOAÇÕES E COLETA ===== */
+
+.pagina-listagem {
+  min-height: 75vh;
+  padding: 55px 8%;
+  background:
+    radial-gradient(ellipse at top right, #63239130, transparent 50%),
+    #0b0d11;
+}
+
+.titulo-pagina {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.titulo-icone {
+  color: var(--roxo);
+  font-size: 45px;
+}
+
+.titulo-pagina h2 {
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+
+.titulo-pagina p {
+  color: var(--cinza);
+  margin: 0;
+}
+
+/* ===== CARDS DE EQUIPAMENTOS E PONTOS ===== */
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid #7433a0;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #171820, #1d1226);
+  box-shadow: 0 0 20px #a64be815;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--verde);
+  box-shadow: 0 0 25px #55c87825;
+}
+
+.card h3 {
+  color: var(--branco);
+  margin-top: 0;
+}
+
+.card p {
+  color: var(--cinza);
+  line-height: 1.6;
+}
+
+.card strong {
+  color: white;
+}
+
+/* ===== INDICADOR DE DISPONIBILIDADE ===== */
+
+.status {
+  display: inline-block;
+  background: #183d29;
+  color: #7be79c;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ===== MENSAGENS DE ERRO ===== */
+
+.erro {
+  margin: 20px 8%;
+  padding: 15px;
+  background: #4a1725;
+  color: #ffb6c4;
+  border-radius: 10px;
+}
+
+/* ===== RODAPÉ ===== */
+
+footer {
+  padding: 25px 8%;
+  text-align: center;
+  background: #08090d;
+  border-top: 1px solid #a64be835;
+}
+
+footer span {
+  color: var(--verde);
+  font-weight: bold;
+}
+
+footer p {
+  color: var(--cinza);
+  font-size: 13px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 800px) {
+  .cabecalho {
+    justify-content: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 55px 6%;
+  }
+
+  .hero-conteudo {
+    max-width: 100%;
+  }
+
+  .hero-etiqueta {
+    margin-bottom: 20px;
+  }
+
+  .hero-visual {
+    min-height: 250px;
+  }
+
+  .beneficios {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .beneficio {
+    justify-content: flex-start;
+  }
+
+  .beneficio:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #ffffff20;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 24px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 4px;
+  }
+
+  nav button {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .pagina-listagem {
+    padding: 35px 5%;
+  }
+
+  .titulo-pagina h2 {
+    font-size: 25px;
+  }
+}
+
+
+
+/* ===== PONTOS DE COLETA: CARDS ===== */
+
+/* Organiza os pontos em colunas responsivas */
+.grade-pontos {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  align-items: stretch;
+}
+
+/* Estilo exclusivo dos pontos de coleta */
+.card-ponto {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 30px;
+  border: 1px solid #65417c;
+  background: linear-gradient(145deg, #191823, #1c1426);
+}
+
+/* ===== CABEÇALHO DO CARD ===== */
+
+.ponto-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ponto-icone {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #a64be81c;
+  border: 1px solid #a64be855;
+  color: var(--roxo);
+  font-size: 30px;
+}
+
+.ponto-cabecalho h3 {
+  margin: 0 0 7px;
+  font-size: 20px;
+}
+
+.ponto-localidade {
+  color: var(--cinza);
+  font-size: 13px;
+}
+
+/* ===== INFORMAÇÕES DO PONTO ===== */
+
+.ponto-informacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ponto-informacao {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.ponto-informacao-icone {
+  color: var(--verde);
+  font-size: 23px;
+  min-width: 26px;
+  text-align: center;
+}
+
+.ponto-informacao strong {
+  display: block;
+  color: var(--branco);
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.ponto-informacao p {
+  margin: 0;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== RODAPÉ DO CARD ===== */
+
+.ponto-rodape {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid #ffffff18;
+}
+
+.ponto-aviso {
+  display: inline-block;
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ===== PESQUISA E FILTROS DOS PONTOS DE COLETA ===== */
+
+.coleta-filtros {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 30px;
+  padding: 26px;
+  border: 1px solid #65417c;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #171820, #1d1226);
+}
+
+/* ===== CAMPO DE PESQUISA ===== */
+
+.coleta-busca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 18px;
+  min-height: 54px;
+  border: 1px solid #57416a;
+  border-radius: 12px;
+  background: #0e1017;
+  transition: border-color 0.2s;
+}
+
+.coleta-busca:focus-within {
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 3px #a64be820;
+}
+
+.coleta-busca-icone {
+  color: var(--verde);
+  font-size: 28px;
+}
+
+.coleta-busca input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--branco);
+  font-size: 15px;
+}
+
+.coleta-busca input::placeholder {
+  color: #8f8b9d;
+}
+
+/* ===== FILTROS POR MATERIAL ===== */
+
+.coleta-categorias {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.coleta-filtros-titulo {
+  margin-right: 6px;
+  color: var(--cinza);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.coleta-filtro {
+  padding: 10px 16px;
+  border: 1px solid #57416a;
+  border-radius: 25px;
+  background: #171520;
+  color: #d5d0df;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.coleta-filtro:hover {
+  border-color: var(--roxo);
+  color: white;
+  background: #a64be820;
+}
+
+.coleta-filtro.ativo {
+  border-color: var(--roxo);
+  background: linear-gradient(135deg, #6c268f, #45175e);
+  color: white;
+  box-shadow: 0 0 15px #a64be825;
+}
+
+/* ===== CONTADOR DE RESULTADOS ===== */
+
+.coleta-resultados {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 18px;
+  border-top: 1px solid #ffffff18;
+  color: var(--cinza);
+  font-size: 13px;
+}
+
+.coleta-resultados span {
+  margin-right: 5px;
+  color: var(--verde);
+  font-size: 20px;
+}
+
+.coleta-resultados strong {
+  color: var(--branco);
+}
+
+/* ===== RESPONSIVIDADE DOS FILTROS ===== */
+
+@media (max-width: 600px) {
+  .coleta-filtros {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .coleta-categorias {
+    gap: 8px;
+  }
+
+  .coleta-filtro {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+}
+
+
+/* ===== EXPLORADOR DE PONTOS DE COLETA ===== */
+
+/* Divide a lista e o mapa em duas colunas */
+.coleta-explorador {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.coleta-lista {
+  min-width: 0;
+}
+
+/* Organiza os cards verticalmente na coluna esquerda */
+.coleta-lista .grade-pontos {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* ===== PAINEL DO MAPA ===== */
+
+.coleta-mapa {
+  position: sticky;
+  top: 24px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #65417c;
+  border-radius: 20px;
+  background: #15141e;
+  box-shadow: 0 0 30px #a64be810;
+}
+
+/* ===== CABEÇALHO DO MAPA ===== */
+
+.coleta-mapa-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px;
+  border-bottom: 1px solid #ffffff14;
+}
+
+.coleta-mapa-topo h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: var(--branco);
+}
+
+.coleta-mapa-topo p {
+  margin: 0;
+  color: var(--cinza);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.coleta-mapa-etiqueta {
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border: 1px solid #a64be855;
+  border-radius: 20px;
+  background: #a64be81b;
+  color: #d99cff;
+  font-size: 11px;
+}
+
+/* ===== ÁREA VISUAL DO MAPA ===== */
+
+.coleta-mapa-conteudo {
+  min-height: 390px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(#55c87809 1px, transparent 1px),
+    linear-gradient(90deg, #55c87809 1px, transparent 1px),
+    radial-gradient(circle at center, #1b654038, transparent 65%),
+    #0e1218;
+  background-size:
+    35px 35px,
+    35px 35px,
+    auto,
+    auto;
+}
+
+.coleta-mapa-simbolo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 22px;
+  border: 1px solid #55c87875;
+  border-radius: 50%;
+  background: #55c87812;
+  color: var(--verde);
+  font-size: 55px;
+  box-shadow: 0 0 45px #55c87825;
+}
+
+.coleta-mapa-conteudo h4 {
+  margin: 0 0 12px;
+  color: var(--branco);
+  font-size: 20px;
+}
+
+.coleta-mapa-conteudo p {
+  max-width: 330px;
+  margin: 0 0 22px;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.coleta-mapa-conteudo > span {
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===== RODAPÉ DO MAPA ===== */
+
+.coleta-mapa-rodape {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 22px;
+  border-top: 1px solid #ffffff14;
+  color: var(--cinza);
+  font-size: 12px;
+}
+
+.coleta-mapa-rodape span:first-child {
+  color: var(--verde);
+}
+
+/* ===== RESPONSIVIDADE DO EXPLORADOR ===== */
+
+@media (max-width: 900px) {
+  .coleta-explorador {
+    grid-template-columns: 1fr;
+  }
+
+  .coleta-mapa {
+    position: static;
+  }
+
+  .coleta-mapa-conteudo {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coleta-mapa-topo {
+    flex-wrap: wrap;
+  }
+
+  .coleta-mapa-conteudo {
+    padding: 25px 18px;
+  }
+}
+
+
+/* ===== CATÁLOGO DE DOAÇÕES ===== */
+
+.grade-doacoes {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+/* ===== CARD DE EQUIPAMENTO ===== */
+
+.card-doacao {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #65417c;
+  background: #17151f;
+}
+
+.card-doacao:hover {
+  border-color: var(--verde);
+  box-shadow: 0 8px 35px #55c87818;
+}
+
+/* ===== ÁREA VISUAL DO EQUIPAMENTO ===== */
+
+.doacao-visual {
+  position: relative;
+  min-height: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, #55c87825, transparent 60%),
+    linear-gradient(135deg, #141b1d, #21142e);
+  border-bottom: 1px solid #ffffff16;
+}
+
+.doacao-categoria {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 7px 12px;
+  border: 1px solid #a64be860;
+  border-radius: 20px;
+  background: #a64be81c;
+  color: #e2b5ff;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.doacao-icone {
+  color: var(--verde);
+  font-size: 95px;
+  line-height: 1;
+  text-shadow: 0 0 40px #55c87860;
+}
+
+.doacao-disponibilidade {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #173c29;
+  color: #80eaa0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===== CONTEÚDO DO CARD ===== */
+
+.doacao-conteudo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 25px;
+}
+
+.doacao-conteudo h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.doacao-descricao {
+  min-height: 45px;
+  margin: 0 0 24px;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== CARACTERÍSTICAS DO EQUIPAMENTO ===== */
+
+.doacao-detalhes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 18px 0;
+  border-top: 1px solid #ffffff14;
+  border-bottom: 1px solid #ffffff14;
+}
+
+.doacao-detalhes div {
+  min-width: 0;
+}
+
+.doacao-detalhes span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--cinza);
+  font-size: 12px;
+}
+
+.doacao-detalhes strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: var(--branco);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* ===== RODAPÉ DO CARD ===== */
+
+.doacao-rodape {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.doacao-selo {
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 480px) {
+  .doacao-visual {
+    min-height: 180px;
+  }
+
+  .doacao-conteudo {
+    padding: 20px;
+  }
+
+  .doacao-detalhes {
+    gap: 8px;
+  }
+}
+
+
+/* ===== PESQUISA E FILTROS DE DOAÇÕES ===== */
+
+.doacoes-filtros {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 30px;
+  padding: 26px;
+  border: 1px solid #65417c;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #171820, #1d1226);
+}
+
+/* ===== CAMPO DE PESQUISA ===== */
+
+.doacoes-busca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 54px;
+  padding: 0 18px;
+  border: 1px solid #57416a;
+  border-radius: 12px;
+  background: #0e1017;
+  transition: 0.2s;
+}
+
+.doacoes-busca:focus-within {
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 3px #a64be820;
+}
+
+.doacoes-busca-icone {
+  color: var(--verde);
+  font-size: 28px;
+}
+
+.doacoes-busca input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--branco);
+  font-size: 15px;
+}
+
+.doacoes-busca input::placeholder {
+  color: #8f8b9d;
+}
+
+/* ===== LINHAS DOS FILTROS ===== */
+
+.doacoes-filtros-linha {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.doacoes-filtros-titulo {
+  min-width: 72px;
+  color: var(--cinza);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.doacoes-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.doacoes-filtro {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid #57416a;
+  border-radius: 25px;
+  background: #171520;
+  color: #d5d0df;
+  font-size: 13px;
+}
+
+.doacoes-filtro.ativo {
+  border-color: var(--roxo);
+  background: linear-gradient(135deg, #6c268f, #45175e);
+  color: white;
+  box-shadow: 0 0 15px #a64be825;
+}
+
+/* ===== CONTADOR DE EQUIPAMENTOS ===== */
+
+.doacoes-resultados {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 18px;
+  border-top: 1px solid #ffffff18;
+  color: var(--cinza);
+  font-size: 13px;
+}
+
+.doacoes-resultados-icone {
+  margin-right: 5px;
+  color: var(--verde);
+  font-size: 20px;
+}
+
+.doacoes-resultados strong {
+  color: var(--branco);
+}
+
+/* ===== RESPONSIVIDADE DOS FILTROS ===== */
+
+@media (max-width: 600px) {
+  .doacoes-filtros {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .doacoes-filtros-linha {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .doacoes-categorias {
+    gap: 8px;
+  }
+
+  .doacoes-filtro {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+}
+
+
+/* ===== BOTÕES DA PÁGINA INICIAL ===== */
+
+.hero-acoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.botao-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 25px;
+  border: 1px solid #55c87885;
+  border-radius: 30px;
+  background: #55c87810;
+  color: var(--verde);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-secundario:hover {
+  background: #55c87820;
+  border-color: var(--verde);
+  box-shadow: 0 0 25px #55c87825;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 800px) {
+  .hero-acoes {
+    justify-content: center;
+  }
+}
+
+
+/* ===== COMO FUNCIONA O RECONECTA ===== */
+
+.como-funciona {
+  padding: 75px 8% 90px;
+  background:
+    radial-gradient(ellipse at center, #3d185020, transparent 65%),
+    #0b0d11;
+}
+
+.como-funciona-cabecalho {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 45px;
+}
+
+.como-funciona-etiqueta {
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.como-funciona-cabecalho h2 {
+  margin: 18px 0;
+  color: var(--branco);
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+.como-funciona-cabecalho h2 span {
+  color: var(--roxo);
+}
+
+.como-funciona-cabecalho p {
+  color: var(--cinza);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ===== CARDS DAS ETAPAS ===== */
+
+.como-funciona-grade {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.etapa-card {
+  position: relative;
+  padding: 32px;
+  border: 1px solid #65417c;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #171820, #1d1226);
+  transition: 0.3s;
+}
+
+.etapa-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--verde);
+  box-shadow: 0 10px 35px #55c87815;
+}
+
+.etapa-numero {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  color: #a64be875;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.etapa-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 25px;
+  border: 1px solid #55c87860;
+  border-radius: 17px;
+  background: #55c87812;
+  color: var(--verde);
+  font-size: 35px;
+}
+
+.etapa-card h3 {
+  margin: 0 0 15px;
+  color: var(--branco);
+  font-size: 21px;
+}
+
+.etapa-card p {
+  margin: 0;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 900px) {
+  .como-funciona-grade {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 480px) {
+  .como-funciona {
+    padding: 55px 5%;
+  }
+
+  .etapa-card {
+    padding: 25px;
+  }
+}

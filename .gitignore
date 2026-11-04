@@ -1,0 +1,25 @@
+
+# ===== DEPENDÊNCIAS =====
+node_modules/
+**/node_modules/
+
+# ===== VARIÁVEIS DE AMBIENTE E SENHAS =====
+.env
+.env.*
+!.env.example
+
+# ===== ARQUIVOS GERADOS =====
+dist/
+build/
+coverage/
+
+# ===== LOGS =====
+*.log
+npm-debug.log*
+
+# ===== ARQUIVOS DO SISTEMA =====
+.DS_Store
+Thumbs.db
+
+# ===== CONFIGURAÇÕES LOCAIS =====
+.vscode/
