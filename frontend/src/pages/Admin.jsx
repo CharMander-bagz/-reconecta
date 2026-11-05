@@ -17,7 +17,12 @@ const formularioInicial = {
 
 function Admin() {
 
-    
+  function sairDoPainel() {
+  sessionStorage.removeItem("reconecta_admin_token");
+  window.location.replace("/admin");
+}
+
+
   // ===== NAVEGAÇÃO DO PAINEL =====
 
   // Controla qual seção administrativa está aberta
@@ -29,7 +34,7 @@ function Admin() {
   const [equipamentos, setEquipamentos] = useState([]);
   const [doacoes, setDoacoes] = useState([]);
   // Armazena todas as publicações para o painel administrativo
-  const [todasDoacoes, setTodasDoacoes] = useState([]); 
+  const [todasDoacoes, setTodasDoacoes] = useState([]);
   const [pontos, setPontos] = useState([]);
   const [mostrarFormularioPonto, setMostrarFormularioPonto] = useState(false);
 
@@ -44,14 +49,14 @@ function Admin() {
     useState({ ...formularioInicial });
   const [salvando, setSalvando] = useState(false);
 
-  
+
   // ===== ESTADOS DA AVALIAÇÃO =====
 
   const [equipamentoSelecionado, setEquipamentoSelecionado] = useState(null);
   const [estadoAvaliacao, setEstadoAvaliacao] = useState("pendente");
   const [salvandoAvaliacao, setSalvandoAvaliacao] = useState(false);
 
-  
+
   // ===== ESTADOS DA DISPONIBILIZAÇÃO =====
 
   const [equipamentoParaDoacao, setEquipamentoParaDoacao] = useState(null);
@@ -66,7 +71,7 @@ function Admin() {
     setErro("");
 
     try {
-      
+
 const [resEquipamentos, resDoacoes, resPontos, resTodasDoacoes] =
   await Promise.all([
     api.get("/equipamentos"),
@@ -170,7 +175,7 @@ const [resEquipamentos, resDoacoes, resPontos, resTodasDoacoes] =
     }
   }
 
-  
+
   // ===== FUNÇÕES DE AVALIAÇÃO =====
 
   // Abre o pop-up com os dados do equipamento selecionado
@@ -213,7 +218,7 @@ const [resEquipamentos, resDoacoes, resPontos, resTodasDoacoes] =
 
       setMensagem("Avaliação atualizada com sucesso!");
 
-    
+
     } catch (error) {
       // ===== DIAGNÓSTICO DO ERRO =====
       console.error("Erro ao avaliar equipamento:", error);
@@ -235,7 +240,7 @@ const [resEquipamentos, resDoacoes, resPontos, resTodasDoacoes] =
     }
   }
 
-  
+
   // ===== FUNÇÕES DE DISPONIBILIZAÇÃO =====
 
   // Abre o pop-up de confirmação do equipamento escolhido
@@ -251,7 +256,7 @@ const [resEquipamentos, resDoacoes, resPontos, resTodasDoacoes] =
     setErroDoacao("");
   }
 
-  
+
 // ===== PUBLICAÇÃO DE EQUIPAMENTOS PARA DOAÇÃO =====
 
 // Cria uma publicação ou reativa uma doação já cadastrada
@@ -351,17 +356,56 @@ async function disponibilizarEquipamento() {
     className={paginaAtual === "pontos" ? "ativo" : ""}
     onClick={() => setPaginaAtual("pontos")}
   >
+
     ⌖ Pontos de coleta
   </button>
 </nav>
 
+{/* ===== SAIR DO PAINEL ===== */}
+
+
+<button
+  type="button"
+  onClick={sairDoPainel}
+  style={{
+    marginTop: "24px",
+    padding: "12px 16px",
+    width: "100%",
+    borderRadius: "9px",
+    border: "1px solid #513064",
+    background: "#21182d",
+    color: "#e6a0b8",
+    fontWeight: "600",
+    fontSize: "14px",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "10px",
+    transition: "all 0.2s ease"
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.background = "#352044";
+    e.currentTarget.style.borderColor = "#a855f7";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.background = "#21182d";
+    e.currentTarget.style.borderColor = "#513064";
+  }}
+>
+  <span>↪</span>
+  Sair do painel
+</button>
+
+
       </aside>
+
 
       {/* ===== CONTEÚDO PRINCIPAL ===== */}
 
       <main className="admin-conteudo">
 
-        
+
 {/* ===== CABEÇALHO EXCLUSIVO DO DASHBOARD ===== */}
 
 <div
@@ -372,7 +416,7 @@ async function disponibilizarEquipamento() {
 >
 
           <div>
-            
+
 {/* ===== TÍTULO DINÂMICO DA PÁGINA ===== */}
 
 <h1>
@@ -657,10 +701,10 @@ async function disponibilizarEquipamento() {
               </div>
             </form>
         </div>
-        
+
           )}
 
-          
+
           {/* ===== POP-UP DE AVALIAÇÃO ===== */}
 
           {equipamentoSelecionado && (
@@ -786,7 +830,7 @@ async function disponibilizarEquipamento() {
             </div>
           )}
 
-          
+
 {/* ===== POP-UP DE DISPONIBILIZAÇÃO ===== */}
 
 {equipamentoParaDoacao && (
@@ -922,7 +966,7 @@ async function disponibilizarEquipamento() {
                  : equipamento.estado}
                 </span>
                 </td>
-                    
+
 {/* ===== SITUAÇÃO DO EQUIPAMENTO ===== */}
 
 <td>
@@ -942,8 +986,8 @@ async function disponibilizarEquipamento() {
 </td>
 
 
-                    
-                    
+
+
 {/* ===== BOTÕES DE AÇÕES DO EQUIPAMENTO ===== */}
 
 <td>
@@ -987,7 +1031,7 @@ async function disponibilizarEquipamento() {
         </section>
       )}
 
-      
+
 {/* ===== GERENCIAMENTO DE DOAÇÕES ===== */}
 
 {paginaAtual === "doacoes" && (
@@ -1051,7 +1095,7 @@ async function disponibilizarEquipamento() {
                   {doacao.estado}
                 </span>
               </td>
-              
+
 {/* ===== STATUS DA PUBLICAÇÃO ===== */}
 
 <td>
@@ -1107,7 +1151,7 @@ async function disponibilizarEquipamento() {
 
     {/* ===== CABEÇALHO DA SEÇÃO ===== */}
 
-    
+
 {/* ===== CABEÇALHO DOS PONTOS DE COLETA ===== */}
 
 <div className="admin-secao-topo">

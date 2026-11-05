@@ -1,22 +1,30 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 import App from "./App.jsx";
 import Admin from "./pages/Admin.jsx";
+import Login from "./pages/Login.jsx";
+
 import "./index.css";
 
-// ===== CONTROLE DE PÁGINAS =====
+const caminhoAtual = window.location.pathname;
 
-// Exibe o painel administrativo quando a URL for /admin
-// e mantém o site público nos demais caminhos
-const paginaAtual =
-  window.location.pathname === "/admin"
-    ? <Admin />
-    : <App />;
+const token = sessionStorage.getItem(
+  "reconecta_admin_token"
+);
 
-// ===== INICIALIZAÇÃO DO REACT =====
+let paginaAtual;
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+if (caminhoAtual === "/admin") {
+  paginaAtual = token ? <Admin /> : <Login />;
+} else {
+  paginaAtual = <App />;
+}
+
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
   <React.StrictMode>
     {paginaAtual}
   </React.StrictMode>

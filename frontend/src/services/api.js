@@ -1,11 +1,23 @@
 
-// ===== CONFIGURAÇÃO DA API =====
-
 import axios from "axios";
 
-// Cria a conexão com o backend do ReConecta
 const api = axios.create({
-  baseURL: "http://localhost:3000/api"
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    "http://localhost:3000/api"
+});
+
+// Envia o token administrativo automaticamente
+api.interceptors.request.use((config) => {
+  const token = sessionStorage.getItem(
+    "reconecta_admin_token"
+  );
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
 });
 
 export default api;

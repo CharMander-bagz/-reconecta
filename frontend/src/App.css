@@ -561,19 +561,6 @@ footer p {
 }
 
 
-/* ===== PESQUISA E FILTROS DOS PONTOS DE COLETA ===== */
-
-.coleta-filtros {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin-bottom: 30px;
-  padding: 26px;
-  border: 1px solid #65417c;
-  border-radius: 18px;
-  background: linear-gradient(145deg, #171820, #1d1226);
-}
-
 /* ===== CAMPO DE PESQUISA ===== */
 
 .coleta-busca {
@@ -1016,8 +1003,9 @@ footer p {
 }
 
 
-/* ===== PESQUISA E FILTROS DE DOAÇÕES ===== */
+/* ===== FILTROS DE DOAÇÕES E COLETA ===== */
 
+.coleta-filtros,
 .doacoes-filtros {
   display: flex;
   flex-direction: column;
@@ -1028,6 +1016,7 @@ footer p {
   border-radius: 18px;
   background: linear-gradient(145deg, #171820, #1d1226);
 }
+
 
 /* ===== CAMPO DE PESQUISA ===== */
 

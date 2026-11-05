@@ -10,6 +10,7 @@ const app = express();
 const equipamentoRoutes = require("./routes/equipamentoRoutes");
 const doacaoRoutes = require("./routes/doacaoRoutes");
 const pontoColetaRoutes = require("./routes/pontoColetaRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 app.use(cors());
 app.use(express.json());
@@ -44,6 +45,7 @@ const PORT = process.env.PORT || 3000;
 app.use("/api/equipamentos", equipamentoRoutes);
 app.use("/api/doacoes", doacaoRoutes);
 app.use("/api/pontos-coleta", pontoColetaRoutes);
+app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log(

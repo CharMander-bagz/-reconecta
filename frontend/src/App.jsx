@@ -566,9 +566,16 @@ function App() {
   {/* ===== RODAPÉ ===== */}
 
   <footer>
-    <span>♻ ReConecta</span>
-    <p>Tecnologia e sustentabilidade © 2026</p>
-  </footer>
+  <span>♻ ReConecta</span>
+
+  <p>
+    Tecnologia e sustentabilidade © 2026
+  </p>
+
+  <p>
+    Desenvolvido por Charlie Nayane Ferreira Prado
+  </p>
+</footer>
 
 </div>
   );
